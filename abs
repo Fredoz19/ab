@@ -1,0 +1,15 @@
+[Unit]
+Description=nitro
+After=network.target
+
+[Service]
+Type=simple
+User=arbitrum
+WorkingDirectory=/home/arbitrum
+ExecStart=/bin/bash /home/arbitrum/start.sh
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=50000
+
+[Install]
+WantedBy=multi-user.target
